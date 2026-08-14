@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import { BrandLogo } from '../../components/brand-logo';
+import { manufacturers, products } from '../../lib/catalog';
+export default function Manufacturers(){return <><section className="page-hero"><p className="kicker red">Portfolio international</p><h1>Nos fabricants<br/><em>partenaires.</em></h1><p>Un portefeuille de technologies sélectionnées pour répondre aux exigences de l’ophtalmologie moderne.</p></section><section className="maker-grid">{manufacturers.map((m,i)=>{const count=products.filter(p=>p.brand===m).length;return <Link href={`/fabricants/${m.toLowerCase().replaceAll(' ','-')}`} key={m}><b>{String(i+1).padStart(2,'0')}</b><BrandLogo name={m}/><p>{count?`${count} produit${count>1?'s':''} au catalogue`:'Partenaire de référence'}</p><span>Explorer →</span></Link>})}</section></>}

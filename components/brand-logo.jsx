@@ -1,0 +1,4 @@
+'use client';
+import { useState } from 'react';
+const domains={Appassamy:'appasamy.com',Cristalens:'cristalens.fr',Freedom:'ophtalmiques.com',Geuder:'geuder.de','I-Optik':'i-optik.com',Lumenis:'lumenis.com',Mani:'mani.co.jp',Optopol:'optopol.com',Rayner:'rayner.com',SBM:'sbm-sistemi.com',Takagi:'takagi-japan.com',Tomey:'tomey.com',Mediworks:'mediworks.biz',PlenOptika:'plenoptika.com',Surgicut:'surgicut.com',DEA:'dea.com',Bolan:'bolanmedical.com'};
+export function BrandLogo({name}){const [failed,setFailed]=useState(false);const [loaded,setLoaded]=useState(false);return <div className="brand-logo">{!failed&&<img src={`https://logo.clearbit.com/${domains[name]}`} alt={`Logo ${name}`} onLoad={()=>setLoaded(true)} onError={()=>setFailed(true)}/>}<span className={loaded?'hide':'show'}>{name}</span></div>}
