@@ -9,6 +9,7 @@ import './nav-size.css';
 import './classy-motion.css';
 import './catalogue.css';
 import './home-hero.css';
+import './media-viewer.css';
 import { SiteShell } from '../components/site-shell';
 
 export const metadata = { title: 'Freedom Distribution | Medical Technology Partner', description: 'Équipements, implants et technologies ophtalmologiques en Tunisie et en Afrique.' };
