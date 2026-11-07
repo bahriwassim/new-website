@@ -1,4 +1,13 @@
-'use client';
-import { useState } from 'react';
-const domains={Appassamy:'appasamy.com',Cristalens:'cristalens.fr',Freedom:'ophtalmiques.com',Geuder:'geuder.de','I-Optik':'i-optik.com',Lumenis:'lumenis.com',Mani:'mani.co.jp',Optopol:'optopol.com',Rayner:'rayner.com',SBM:'sbm-sistemi.com',Takagi:'takagi-japan.com',Tomey:'tomey.com',Mediworks:'mediworks.biz',PlenOptika:'plenoptika.com',Surgicut:'surgicut.com',DEA:'dea.com',Bolan:'bolanmedical.com'};
-export function BrandLogo({name}){const [failed,setFailed]=useState(false);const [loaded,setLoaded]=useState(false);return <div className="brand-logo">{!failed&&<img src={`https://logo.clearbit.com/${domains[name]}`} alt={`Logo ${name}`} onLoad={()=>setLoaded(true)} onError={()=>setFailed(true)}/>}<span className={loaded?'hide':'show'}>{name}</span></div>}
+const logos = {
+  Rayner: 'logo-fabricant/RaynerLogo_Blk_500px_wide_cropped.png',
+  Optopol: 'logo-fabricant/Optopol_logo-1024x222.webp',
+  Tomey: 'logo-fabricant/6628f48e0df40de6128cf255_tomey_logo.jpg',
+  Cristalens: 'logo-fabricant/LOGO_CRISTALENS_RVB.png',
+  Geuder: 'logo-fabricant/megatron-s4-hps-microsurgical-system-geuder-label-text-logo-symbol-transparent-png-2980051.png',
+  Optos: 'logo-fabricant/optos.jpg'
+};
+
+export function BrandLogo({ name }) {
+  const image = logos[name];
+  return <div className="brand-logo">{image ? <img src={`/media/${image.split('/').map(encodeURIComponent).join('/')}`} alt={`Logo ${name}`} /> : <span className="brand-monogram">{name.slice(0, 2).toUpperCase()}</span>}<strong>{name}</strong></div>;
+}
