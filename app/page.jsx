@@ -3,10 +3,10 @@ import { Reveal } from '../components/reveal';
 import { categories, manufacturers, media, products } from '../lib/catalog';
 
 const categoryPhotos = [
-  {src:'https://images.unsplash.com/photo-1770217757395-f14e9c2f601b?auto=format&fit=crop&w=1600&q=85',alt:'Examen ophtalmologique avec un instrument de mesure',credit:'Navy Medicine · Unsplash',source:'https://unsplash.com/photos/ophthalmologist-examines-patients-eye-with-instrument-XrW_dhI8_BU'},
-  {src:'https://images.unsplash.com/photo-1565428744974-f41cf79c05fa?auto=format&fit=crop&w=1600&q=85',alt:'Équipement de diagnostic ophtalmologique',credit:'Syed Hussaini · Unsplash',source:'https://unsplash.com/photos/eye-equipment-mDCuzdHh_bw'},
-  {src:'https://images.unsplash.com/photo-1766315746079-215ff5115e9f?auto=format&fit=crop&w=1600&q=85',alt:'Équipe chirurgicale travaillant au microscope opératoire',credit:'Annie Spratt · Unsplash',source:'https://unsplash.com/photos/surgeons-operating-with-a-microscope-XHQOoJ-4-eI'},
-  {src:'https://images.unsplash.com/photo-1766310549795-dd0fc75d499f?auto=format&fit=crop&w=1600&q=85',alt:'Examen des yeux par un professionnel de santé',credit:'Annie Spratt · Unsplash',source:'https://unsplash.com/photos/optometrist-examining-a-patients-eye-with-equipment-3r0Mv2Muvyk'}
+  {src:media('site-media/images/expertise-exam.jpg'),alt:'Examen ophtalmologique avec un instrument de mesure',credit:'Navy Medicine · Unsplash',source:'https://unsplash.com/photos/ophthalmologist-examines-patients-eye-with-instrument-XrW_dhI8_BU'},
+  {src:media('site-media/images/expertise-diagnostics.jpg'),alt:'Équipement de diagnostic ophtalmologique',credit:'Syed Hussaini · Unsplash',source:'https://unsplash.com/photos/eye-equipment-mDCuzdHh_bw'},
+  {src:media('site-media/images/expertise-surgery.jpg'),alt:'Équipe chirurgicale travaillant au microscope opératoire',credit:'Annie Spratt · Unsplash',source:'https://unsplash.com/photos/surgeons-operating-with-a-microscope-XHQOoJ-4-eI'},
+  {src:media('site-media/images/expertise-dry-eye.jpg'),alt:'Examen des yeux par un professionnel de santé',credit:'Annie Spratt · Unsplash',source:'https://unsplash.com/photos/optometrist-examining-a-patients-eye-with-equipment-3r0Mv2Muvyk'}
 ];
 
 export default function Home() {
