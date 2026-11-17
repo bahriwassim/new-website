@@ -6,12 +6,14 @@ const categoryPhotos = [
   {src:media('site-media/images/expertise-exam.jpg'),alt:'Examen ophtalmologique avec un instrument de mesure'},
   {src:media('site-media/images/expertise-diagnostics.jpg'),alt:'Équipement de diagnostic ophtalmologique'},
   {src:media('site-media/images/expertise-surgery.jpg'),alt:'Équipe chirurgicale travaillant au microscope opératoire'},
-  {src:media('site-media/images/expertise-dry-eye.jpg'),alt:'Examen des yeux par un professionnel de santé'}
+  {src:media('site-media/images/expertise-dry-eye.jpg'),alt:'Examen des yeux par un professionnel de santé'},
+  {src:media('site-media/images/expertise-operating-microscope.png'),alt:'Microscope opératoire de précision dans une salle de chirurgie ophtalmologique'},
+  {src:media('site-media/images/expertise-phaco-vitrectomy.png'),alt:'Plateforme de phacoémulsification et de vitrectomie en salle opératoire'}
 ];
 
 export default function Home() {
   const featured = products.filter(product => ['rayone-hydrophobic-aspheric', 'casia-2', 'revo-fc130'].includes(product.slug));
-  const descriptions = ['Implants et solutions dédiés à la chirurgie de la cataracte.','Imagerie et équipements pour l’examen et le diagnostic ophtalmologique.','Instruments et technologies pour le bloc opératoire.','Solutions spécialisées dans la prise en charge de l’œil sec.'];
+  const descriptions = ['Implants et solutions dédiés à la chirurgie de la cataracte.','Imagerie et équipements pour l’examen et le diagnostic ophtalmologique.','Fluides et gaz — solutions de haute pureté pour la chirurgie ophtalmologique.','Solutions spécialisées dans la prise en charge de l’œil sec.','Une vision nette et stable pour accompagner chaque geste en chirurgie ophtalmologique.','Des plateformes de précision pour les interventions de la cataracte et de la rétine.'];
 
   return <>
     <section className="hero-premium">
@@ -24,7 +26,7 @@ export default function Home() {
 
     <section id="about" className="about-section"><Reveal><p className="kicker red">À propos de nous</p><h2>Freedom Distribution,<br/><em>partenaire de votre pratique.</em></h2><p>Freedom Distribution est une entreprise privée spécialisée dans la distribution d’équipements, d’implants, d’accessoires ophtalmiques et de technologies médicales innovantes en Tunisie et en Afrique. La société propose une large gamme d’accessoires chirurgicaux de haute qualité, sélectionnés auprès de partenaires qualifiés, expérimentés et certifiés, afin d’offrir un service optimal à ses partenaires.</p></Reveal></section>
 
-    <section id="solutions" className="solution-section"><Reveal><p className="kicker red">Nos expertises · Freedom Medical</p><h2>Des solutions pour chaque étape<br/><em>du parcours ophtalmologique.</em></h2></Reveal><div className="solution-grid-next">{categories.map((category,index)=>{const photo=categoryPhotos[index];const label=category==='Chirurgie'?'Chirurgie de la rétine':category;return <Reveal key={category} delay={index*.08}><Link href={`/produits?category=${encodeURIComponent(category)}`} className={'solution-tile tile-'+index}><div><small>0{index+1}</small><h3>{label}</h3><p>{descriptions[index]}</p><b>Explorer les solutions <span aria-hidden="true">→</span></b></div><img src={photo.src} alt={photo.alt} loading="lazy"/></Link></Reveal>})}</div></section>
+    <section id="solutions" className="solution-section"><Reveal><p className="kicker red">Nos expertises · Freedom Medical</p><h2>Des solutions pour chaque étape<br/><em>du parcours ophtalmologique.</em></h2></Reveal><div className="solution-grid-next">{[...categories.map((category,index)=>({key:category,label:category==='Chirurgie'?'Chirurgie de la rétine':category,category,index})),{key:'microscope-operatoire',label:'Microscope opératoire',category:'Exploration & diagnostic',index:4},{key:'phaco-vitrectomie',label:'Appareil de phacoémulsification et de vitrectomie',category:'Chirurgie',index:5}].map(({key,label,category,index})=>{const photo=categoryPhotos[index];return <Reveal key={key} delay={index*.08}><Link href={`/produits?category=${encodeURIComponent(category)}`} className={'solution-tile tile-'+index}><div><small>0{index+1}</small><h3>{label}</h3><p>{descriptions[index]}</p><b>Explorer les solutions <span aria-hidden="true">→</span></b></div><img src={photo.src} alt={photo.alt} loading="lazy"/></Link></Reveal>})}</div></section>
 
     <section className="feature-products"><div className="heading-row"><Reveal><p className="kicker red">Catalogue sélectionné</p><h2>Nos solutions phares.</h2></Reveal><Link href="/produits" className="arrow-link">Explorer tous les produits <b>→</b></Link></div><div className="featured-grid">{featured.map((product,index)=><Reveal key={product.slug} delay={index*.07}><Link href={`/produits/${product.slug}`} className="product-tile"><div className="product-photo"><img src={media(product.image)} alt={product.name}/></div><small>{product.brand} · {product.category}</small><h3>{product.name}</h3><span>Découvrir <b>↗</b></span></Link></Reveal>)}</div></section>
 
