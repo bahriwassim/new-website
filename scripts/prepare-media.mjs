@@ -26,6 +26,12 @@ async function copyMedia(source, relative = '') {
     } else if (entry.isFile() && extensions.has(path.extname(entry.name).toLowerCase())) {
       const targetPath = path.join(destination, childRelative);
       await mkdir(path.dirname(targetPath), { recursive: true });
+      try {
+        const [sourceStat, targetStat] = await Promise.all([stat(sourcePath), stat(targetPath)]);
+        if (targetStat.size === sourceStat.size && targetStat.mtimeMs >= sourceStat.mtimeMs) continue;
+      } catch (error) {
+        if (error.code !== 'ENOENT') throw error;
+      }
       await cp(sourcePath, targetPath);
     }
   }
@@ -40,6 +46,10 @@ for (const directory of directories) {
     if (error.code !== 'ENOENT') throw error;
   }
 }
+
+// Le lot remis pour le catalogue contient les originaux dans ce sous-dossier;
+// les fusionner dans la même arborescence publique que les autres médias.
+await copyMedia(path.join(root, 'fichiers 1711', 'SITE WEB'));
 
 const logo = 'cropped-logo-retina-final-freedom-medical-ophtalmologies (1).png';
 await cp(path.join(root, logo), path.join(destination, logo));

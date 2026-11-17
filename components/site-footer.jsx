@@ -6,6 +6,6 @@ export function SiteFooter() {
     <div><b>Freedom Distribution</b><Link href="/a-propos">À propos de nous</Link><Link href="/equipe">Notre équipe</Link><Link href="/fabricants">Nos fabricants</Link><Link href="/contact">Contact</Link></div>
     <div><b>Solutions</b><Link href="/produits?category=Implants+intraoculaires">Implants intraoculaires</Link><Link href="/produits?category=Exploration+%26+diagnostic">Exploration & diagnostic</Link><Link href="/produits?category=Chirurgie">Chirurgie</Link><Link href="/produits?category=Dry+Eye">Dry Eye</Link></div>
     <div className="footer-addresses"><b>Nos implantations</b><address><strong>Sousse</strong>Immeuble Freedom<br/>Av. Ibn Jazzar, 4000 Sousse</address><address><strong>Tunis</strong>Avenue 9 Avril N° 167<br/>Tunis</address><address><strong>Sfax</strong>IMM El Borj · Bloc B<br/>Bureau N° B4, Sfax</address></div>
-    <div className="copyright"><a href="mailto:contact@ophtalmiques.com">contact@ophtalmiques.com</a><span>© 2026 Freedom Distribution<br/>Tous droits réservés.</span><span>Développé par Stiky Consulting</span></div>
+    <div className="copyright"><a href="mailto:smaoui.amine@freedomophtalmiques.com">smaoui.amine@freedomophtalmiques.com</a><span>© 2026 Freedom Distribution<br/>Tous droits réservés.</span><span>Développé par Stiky Consulting</span></div>
   </footer>;
 }
