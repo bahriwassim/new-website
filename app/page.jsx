@@ -10,7 +10,7 @@ const categoryPhotos = [
 ];
 
 export default function Home() {
-  const featured = products.filter(product => ['rayone-hydrophobic-aspheric', 'casia-2', 'revo-fc130', 'activa'].includes(product.slug));
+  const featured = products.filter(product => ['rayone-hydrophobic-aspheric', 'casia-2', 'revo-fc130'].includes(product.slug));
   const descriptions = ['Implants et solutions dédiés à la chirurgie de la cataracte.','Imagerie et équipements pour l’examen et le diagnostic ophtalmologique.','Instruments et technologies pour le bloc opératoire.','Solutions spécialisées dans la prise en charge de l’œil sec.'];
 
   return <>
